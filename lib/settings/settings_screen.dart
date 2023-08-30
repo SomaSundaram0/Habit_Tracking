@@ -42,7 +42,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     }
   }
   @override
-  @override
   Widget build(BuildContext context) {
     return Consumer<AppStateManager>(
       builder: (
@@ -92,7 +91,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                     ),
                     ListTile(
-                      title: Row(
+                      title: const Row(
                         mainAxisSize: MainAxisSize.min,
                         children: const [
                           Text("First day of the week"),
