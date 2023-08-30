@@ -1,4 +1,3 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:Habit_Tracking/constants.dart';
 import 'package:Habit_Tracking/navigation/app_state_manager.dart';
@@ -7,7 +6,6 @@ import 'package:Habit_Tracking/notifications.dart';
 import 'package:Habit_Tracking/settings/color_icon.dart';
 import 'package:Habit_Tracking/settings/settings_manager.dart';
 import 'package:loader_overlay/loader_overlay.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -43,35 +41,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           selectedTime;
     }
   }
-
   @override
-  void initState() {
-    Future<void> _initPackageInfo() async {
-      final info = await PackageInfo.fromPlatform();
-      setState(() {
-      });
-    }
-    super.initState();
-    _initPackageInfo();
-  }
-
-
-  showRestoreDialog(BuildContext context) {
-    AwesomeDialog(
-      context: context,
-      dialogType: DialogType.warning,
-      headerAnimationLoop: false,
-      animType: AnimType.bottomSlide,
-      title: "Warning",
-      desc: "All habits will be replaced with habits from backup.",
-      btnOkText: "Restore",
-      btnCancelText: "Cancel",
-      btnCancelColor: Colors.grey,
-      btnOkColor: Habit_TrackingColors.primary,
-      btnCancelOnPress: () {},
-    ).show();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Consumer<AppStateManager>(
