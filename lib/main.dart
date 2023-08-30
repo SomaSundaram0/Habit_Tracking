@@ -13,7 +13,6 @@ import 'package:provider/provider.dart';
 import 'package:window_size/window_size.dart';
 
 void main() {
-  addLicenses();
   runApp(
     const Habit_Tracking(),
   );
@@ -90,11 +89,4 @@ class _Habit_TrackingState extends State<Habit_Tracking> {
       }),
     );
   }
-}
-
-void addLicenses() {
-  LicenseRegistry.addLicense(() async* {
-    final license = await rootBundle.loadString('assets/google_fonts/OFL.txt');
-    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
-  });
 }
